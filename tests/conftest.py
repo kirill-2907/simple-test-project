@@ -4,7 +4,7 @@ from pages.main_page import MainPage
 
 
 @pytest.fixture()
-def f_browser() ->  BrowserContext:
+def f_browser() -> BrowserContext:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context()
