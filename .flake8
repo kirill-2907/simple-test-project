@@ -1,0 +1,29 @@
+[flake8]
+# Максимальная длина строки
+max-line-length = 88
+
+# Игнорируемые ошибки
+extend-ignore = 
+    E203,
+    W503,
+    E501,
+    F401
+
+# Исключаемые директории и файлы
+exclude = 
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    .pytest_cache,
+    build,
+    dist,
+    *.egg-info
+
+# Игнорирование конкретных ошибок в определенных файлах
+per-file-ignores =
+    __init__.py:F401
+    tests/*:E501,W503
+
+# Настройки mccabe (цикломатическая сложность)
+max-complexity = 10
