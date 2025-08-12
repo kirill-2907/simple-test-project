@@ -1,3 +1,9 @@
-# Testing framework
+# framework
 pytest==7.4.3
 pytest-playwright==0.7.0
+
+# linter
+flake8==7.3.0
+mccabe==0.7.0
+pycodestyle==2.14.0
+pyflakes==3.4.0
