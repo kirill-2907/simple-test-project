@@ -32,8 +32,10 @@ jobs:
         
     - name: Install Playwright browsers
       run: |
-        playwright install
+        playwright install --with-deps chromium
         
     - name: Run tests
       run: |
         python -m pytest tests/ -v -p no:allure_pytest
+      env:
+        PLAYWRIGHT_HEADLESS: true
