@@ -1,14 +1,12 @@
 import pytest
-import os
-from playwright.sync_api import sync_playwright, Page, BrowserContext
+from playwright.sync_api import sync_playwright, BrowserContext
 from pages.main_page import MainPage
 
 
 @pytest.fixture()
 def f_browser() -> BrowserContext:
     with sync_playwright() as p:
-        headless = os.getenv('CI', 'false').lower() == 'true'
-        browser = p.chromium.launch(headless=headless)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         yield context
         context.close()
